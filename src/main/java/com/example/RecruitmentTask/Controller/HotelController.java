@@ -1,5 +1,7 @@
 package com.example.RecruitmentTask.Controller;
 
+import com.example.RecruitmentTask.Dto.HotelDto;
+import com.example.RecruitmentTask.Dto.ReservationDto;
 import com.example.RecruitmentTask.Entity.Hotel;
 import com.example.RecruitmentTask.Entity.Reservation;
 import com.example.RecruitmentTask.Service.Impl.HotelServiceImpl;
@@ -19,8 +21,8 @@ public class HotelController {
 
 
     @RequestMapping("/hotel-reservations")
-    public List<Reservation> getAllReservation(@RequestParam("id") int id) {
-        return hotelService.findAllReservation(hotelService.findById(id));
+    public List<ReservationDto> getAllReservation(@RequestParam("id") int id) {
+        return hotelService.findAllReservation(id);
     }
 
 
@@ -29,7 +31,8 @@ public class HotelController {
 
 
     @RequestMapping("/hotele")
-    public List<Hotel> getAllHotels() {
+    public List<HotelDto> getAllHotels() {
+
         return hotelService.findAll();
     }
 

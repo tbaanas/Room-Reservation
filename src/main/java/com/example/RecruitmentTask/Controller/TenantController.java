@@ -1,6 +1,6 @@
 package com.example.RecruitmentTask.Controller;
 
-import com.example.RecruitmentTask.Entity.Reservation;
+import com.example.RecruitmentTask.Dto.ReservationDto;
 import com.example.RecruitmentTask.Service.Impl.TenantServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +21,7 @@ public class TenantController {
 
 
     @RequestMapping("/tenant-reservations")
-    public List<Reservation> getReservationsByTenantName(@RequestParam("name") String name) {
+    public List<ReservationDto> getReservationsByTenantName(@RequestParam("name") String name) {
         return service.getAllReservations(name);
     }
 }

@@ -1,7 +1,8 @@
 package com.example.RecruitmentTask.Service;
 
+import com.example.RecruitmentTask.Dto.HotelDto;
+import com.example.RecruitmentTask.Dto.ReservationDto;
 import com.example.RecruitmentTask.Entity.Hotel;
-import com.example.RecruitmentTask.Entity.Reservation;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public interface HotelService {
 
     Hotel findById(long id);
 
-    List<Hotel> findAll();
-    List<Reservation> findAllReservation(Hotel hotel);
+    List<HotelDto> findAll();
+    List<ReservationDto> findAllReservation(long id);
 
 }

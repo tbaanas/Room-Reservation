@@ -1,19 +1,14 @@
 package com.example.RecruitmentTask.Controller;
 
-import com.example.RecruitmentTask.Entity.Hotel;
-import com.example.RecruitmentTask.Entity.Landlord;
+import com.example.RecruitmentTask.Dto.ReservationDto;
 import com.example.RecruitmentTask.Entity.Reservation;
-import com.example.RecruitmentTask.Entity.Tenant;
-import com.example.RecruitmentTask.Repository.HotelRepository;
-import com.example.RecruitmentTask.Repository.LandlordRepository;
-import com.example.RecruitmentTask.Repository.TenantRepository;
 import com.example.RecruitmentTask.Service.Impl.ReservationServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Map;
 
 @RestController
@@ -40,7 +35,7 @@ public class ReservationController {
     @RequestMapping(
             value = "/new-reservation",
             method = RequestMethod.POST)
-    public String createReservation(@RequestBody Reservation reservation) {
+    public String createReservation(@RequestBody ReservationDto reservation) {
 
         return service.save(reservation);
     }
@@ -72,7 +67,7 @@ ZMIANA DATY wynajmu
     @RequestMapping(
             value = "/update-reservation",
             method = RequestMethod.POST)
-    public String updateReservation(@RequestBody Map<String, Reservation> reservationMap) {
+    public String updateReservation(@RequestBody Map<String, ReservationDto> reservationMap) {
 
         if (reservationMap.get("oldReservation") == null || reservationMap.get("newReservation") == null) {
             return "Two object must Exist";

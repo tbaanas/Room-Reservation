@@ -1,9 +1,9 @@
 package com.example.RecruitmentTask.Service;
 
-import com.example.RecruitmentTask.Entity.Reservation;
+import com.example.RecruitmentTask.Dto.ReservationDto;
 
 import java.util.List;
 
 public interface TenantService {
-    List<Reservation> getAllReservations(String tenantName);
+    List<ReservationDto> getAllReservations(String tenantName);
 }

@@ -40,10 +40,10 @@ public class ImportDataBase implements ApplicationListener<ApplicationReadyEvent
     @Override
     public void onApplicationEvent(ApplicationReadyEvent event) {
         //Import do bazy zamiast z import.sql
-        createHotels();
-        createTenants();
-        createLandlords();
-        createReservations();
+       // createHotels();
+       // createTenants();
+       // createLandlords();
+       // createReservations();
 
     }
 
